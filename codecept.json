@@ -1,0 +1,37 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://staging-app.advanon.com",
+      "browser": "chrome",
+      "restart": false,
+      "smartWait": 10000,
+      "timeouts": {
+        "script": 10000,
+        "page load": 20000
+      },
+      "chromeOptions": {
+           "args": [ "--headless", "--disable-gpu", "--no-sandbox" ]
+      }
+    },
+    "JSFailure": {
+      "require": "./jsfailure_helper.js"
+    },
+    "Custom": {
+      "require": "./custom_helper.js"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js",
+    "signupFormPage": "./pages/signupForm.js",
+    "dashboardPage": "./pages/dashboard.js",
+    "addressFormPage": "./pages/addressForm.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "tests": "./*_test.js",
+  "timeout": 10000,
+  "name": "codeceptjs"
+}
